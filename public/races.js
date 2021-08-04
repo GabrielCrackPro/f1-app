@@ -42,7 +42,7 @@ window.onload = async () => {
       race.Circuit.url
     }" target="blank" class="btn btn-sm f1-bg text-white">Circuit Info</a></h6>
             <h6>Date: ${formatDate(race.date)} - ${formatTime(race.time)}</h6>
-            <h6>Season: ${race.season} Round: ${race.round}</h6>
+            <h6>Season: ${race.season} Race: ${race.round}</h6>
         <a href="${
           race.url
         }" target="blank" class="btn f1-bg text-white">Race Info</a>
