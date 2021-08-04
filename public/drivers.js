@@ -20,13 +20,12 @@ const getDriverAge = (date) => {
     return `${age} years`;
   }
 };
-window.onload = async () => {
+const getDrivers = async () => {
   let drivers = await getData(API_URLS.drivers);
+  drivers.limit = drivers.total;
   drivers = {
     table: drivers.DriverTable.Drivers,
-    limit: "30", //TODO: raise this limit
   };
-  console.log(drivers);
   drivers.table.forEach((driver) => {
     driversContainer.innerHTML += `
     <div class="card mb-3">
@@ -37,9 +36,9 @@ window.onload = async () => {
       driver.familyName
     }</h5>
         <h6 class="card-subtitle mb-2">${driver.nationality}</h6>
-        <p>Date Of Birth: ${driver.dateOfBirth} - ${getDriverAge(
+        <h6>Date Of Birth: ${driver.dateOfBirth} - ${getDriverAge(
       driver.dateOfBirth
-    )}</p>
+    )}</h6>
     <a href="${
       driver.url
     }" target="blank" class="btn f1-bg text-white">More Info</a>
@@ -50,3 +49,5 @@ window.onload = async () => {
     `;
   });
 };
+
+window.onload = getDrivers();
