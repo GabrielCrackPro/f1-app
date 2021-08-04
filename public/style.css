@@ -1,0 +1,19 @@
+* {
+  font-family: "Nunito", sans-serif;
+}
+.f1-bg {
+  background-color: #e10600;
+}
+.f1-color {
+  color: #e10600;
+}
+.f1-border {
+  border-bottom: 1px solid #e10600;
+}
+.active {
+  text-decoration: underline;
+}
+a:hover {
+  color: #fff !important;
+  text-decoration: underline !important;
+}
