@@ -20,6 +20,12 @@ const getDriverAge = (date) => {
     return `${age} years`;
   }
 };
+const formatDate = (date) => {
+  let day = new Date(date).getDay().toLocaleString();
+  let mouth = new Date(date).getMonth().toLocaleString();
+  let year = new Date(date).getFullYear().toLocaleString();
+  return `${day}-${mouth}-${year}`;
+};
 const getDrivers = async () => {
   let drivers = await getData(API_URLS.drivers);
   drivers.limit = drivers.total;
@@ -36,7 +42,7 @@ const getDrivers = async () => {
       driver.familyName
     }</h5>
         <h6 class="card-subtitle mb-2">${driver.nationality}</h6>
-        <h6>Date Of Birth: ${driver.dateOfBirth} - ${getDriverAge(
+        <h6>Birth Date: ${formatDate(driver.dateOfBirth)} - ${getDriverAge(
       driver.dateOfBirth
     )}</h6>
     <a href="${
