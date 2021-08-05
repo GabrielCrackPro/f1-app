@@ -11,7 +11,7 @@
   border-bottom: 1px solid #e10600;
 }
 .active {
-  text-decoration: underline;
+  font-size: 1.3rem;
 }
 a:hover {
   color: #fff !important;
