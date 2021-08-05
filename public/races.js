@@ -23,7 +23,6 @@ window.onload = async () => {
   races = {
     table: races.RaceTable.Races,
   };
-  console.log(races.table[0]);
   races.table.forEach((race) => {
     racesContainer.innerHTML += `
       <div class="card mb-3">
